@@ -1,0 +1,13 @@
+{
+  "name": "guest-dataexport-managesystem",
+  "version": "0.1.0",
+  "private": true,
+  "description": "招商大会嘉宾名单核对、统计与文件导出工作台",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "start": "node scripts/serve.mjs",
+    "test": "node tests/check.mjs",
+    "build": "node scripts/validate.mjs"
+  }
+}

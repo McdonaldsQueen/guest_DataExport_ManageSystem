@@ -1,0 +1,1325 @@
+{
+  "units": [
+    {
+      "id": "demo-u1",
+      "name": "演示企业01有限公司",
+      "short": "演示01",
+      "type": "意向投资企业",
+      "primaryNature": "2.世界500强(国内企业)",
+      "institution": "",
+      "country": "中国",
+      "category": "内资企业",
+      "industry": "生物产业",
+      "lines": [
+        101
+      ],
+      "worlds": {},
+      "natures": [],
+      "rankIssues": [],
+      "hongkongCapital": false
+    },
+    {
+      "id": "demo-u2",
+      "name": "演示企业02有限公司",
+      "short": "演示02",
+      "type": "意向投资企业",
+      "primaryNature": "3.中国民营企业500强",
+      "institution": "",
+      "country": "中国",
+      "category": "内资企业",
+      "industry": "营利性服务业",
+      "lines": [
+        102
+      ],
+      "worlds": {},
+      "natures": [],
+      "rankIssues": [],
+      "hongkongCapital": false
+    },
+    {
+      "id": "demo-u3",
+      "name": "演示企业03有限公司",
+      "short": "演示03",
+      "type": "意向投资企业",
+      "primaryNature": "9.民营企业",
+      "institution": "",
+      "country": "中国",
+      "category": "内资企业",
+      "industry": "新一代信息技术产业",
+      "lines": [
+        103
+      ],
+      "worlds": {},
+      "natures": [],
+      "rankIssues": [],
+      "hongkongCapital": false
+    },
+    {
+      "id": "demo-u4",
+      "name": "演示企业04有限公司",
+      "short": "演示04",
+      "type": "意向投资企业",
+      "primaryNature": "1.世界500强(外企)",
+      "institution": "",
+      "country": "中国",
+      "category": "内资企业",
+      "industry": "生物产业",
+      "lines": [
+        104
+      ],
+      "worlds": {},
+      "natures": [],
+      "rankIssues": [],
+      "hongkongCapital": false
+    },
+    {
+      "id": "demo-u5",
+      "name": "演示企业05有限公司",
+      "short": "演示05",
+      "type": "意向投资企业",
+      "primaryNature": "2.世界500强(国内企业)",
+      "institution": "",
+      "country": "中国",
+      "category": "内资企业",
+      "industry": "营利性服务业",
+      "lines": [
+        105
+      ],
+      "worlds": {},
+      "natures": [],
+      "rankIssues": [],
+      "hongkongCapital": false
+    },
+    {
+      "id": "demo-u6",
+      "name": "演示企业06有限公司",
+      "short": "演示06",
+      "type": "意向投资企业",
+      "primaryNature": "3.中国民营企业500强",
+      "institution": "",
+      "country": "中国",
+      "category": "内资企业",
+      "industry": "新一代信息技术产业",
+      "lines": [
+        106
+      ],
+      "worlds": {},
+      "natures": [],
+      "rankIssues": [],
+      "hongkongCapital": false
+    },
+    {
+      "id": "demo-u7",
+      "name": "演示企业07有限公司",
+      "short": "演示07",
+      "type": "意向投资企业",
+      "primaryNature": "9.民营企业",
+      "institution": "",
+      "country": "中国",
+      "category": "内资企业",
+      "industry": "生物产业",
+      "lines": [
+        107
+      ],
+      "worlds": {},
+      "natures": [],
+      "rankIssues": [],
+      "hongkongCapital": false
+    },
+    {
+      "id": "demo-u8",
+      "name": "演示企业08有限公司",
+      "short": "演示08",
+      "type": "意向投资企业",
+      "primaryNature": "1.世界500强(外企)",
+      "institution": "",
+      "country": "中国",
+      "category": "内资企业",
+      "industry": "营利性服务业",
+      "lines": [
+        108
+      ],
+      "worlds": {},
+      "natures": [],
+      "rankIssues": [],
+      "hongkongCapital": false
+    },
+    {
+      "id": "demo-u9",
+      "name": "演示企业09有限公司",
+      "short": "演示09",
+      "type": "意向投资企业",
+      "primaryNature": "2.世界500强(国内企业)",
+      "institution": "",
+      "country": "中国",
+      "category": "内资企业",
+      "industry": "新一代信息技术产业",
+      "lines": [
+        109
+      ],
+      "worlds": {},
+      "natures": [],
+      "rankIssues": [],
+      "hongkongCapital": false
+    },
+    {
+      "id": "demo-u10",
+      "name": "演示企业10有限公司",
+      "short": "演示10",
+      "type": "意向投资企业",
+      "primaryNature": "3.中国民营企业500强",
+      "institution": "",
+      "country": "中国",
+      "category": "内资企业",
+      "industry": "生物产业",
+      "lines": [
+        110
+      ],
+      "worlds": {},
+      "natures": [],
+      "rankIssues": [],
+      "hongkongCapital": false
+    },
+    {
+      "id": "demo-u11",
+      "name": "演示企业11有限公司",
+      "short": "演示11",
+      "type": "意向投资企业",
+      "primaryNature": "9.民营企业",
+      "institution": "",
+      "country": "中国",
+      "category": "内资企业",
+      "industry": "营利性服务业",
+      "lines": [
+        111
+      ],
+      "worlds": {},
+      "natures": [],
+      "rankIssues": [],
+      "hongkongCapital": false
+    },
+    {
+      "id": "demo-u12",
+      "name": "演示企业12有限公司",
+      "short": "演示12",
+      "type": "意向投资企业",
+      "primaryNature": "1.世界500强(外企)",
+      "institution": "",
+      "country": "中国",
+      "category": "内资企业",
+      "industry": "新一代信息技术产业",
+      "lines": [
+        112
+      ],
+      "worlds": {},
+      "natures": [],
+      "rankIssues": [],
+      "hongkongCapital": false
+    },
+    {
+      "id": "demo-u13",
+      "name": "演示企业13有限公司",
+      "short": "演示13",
+      "type": "意向投资企业",
+      "primaryNature": "2.世界500强(国内企业)",
+      "institution": "",
+      "country": "中国",
+      "category": "内资企业",
+      "industry": "生物产业",
+      "lines": [
+        113
+      ],
+      "worlds": {},
+      "natures": [],
+      "rankIssues": [],
+      "hongkongCapital": false
+    },
+    {
+      "id": "demo-u14",
+      "name": "演示企业14有限公司",
+      "short": "演示14",
+      "type": "意向投资企业",
+      "primaryNature": "3.中国民营企业500强",
+      "institution": "",
+      "country": "中国",
+      "category": "内资企业",
+      "industry": "营利性服务业",
+      "lines": [
+        114
+      ],
+      "worlds": {},
+      "natures": [],
+      "rankIssues": [],
+      "hongkongCapital": false
+    },
+    {
+      "id": "demo-u15",
+      "name": "演示企业15有限公司",
+      "short": "演示15",
+      "type": "意向投资企业",
+      "primaryNature": "9.民营企业",
+      "institution": "",
+      "country": "中国",
+      "category": "内资企业",
+      "industry": "新一代信息技术产业",
+      "lines": [
+        115
+      ],
+      "worlds": {},
+      "natures": [],
+      "rankIssues": [],
+      "hongkongCapital": false
+    },
+    {
+      "id": "demo-u16",
+      "name": "演示企业16有限公司",
+      "short": "演示16",
+      "type": "意向投资企业",
+      "primaryNature": "1.世界500强(外企)",
+      "institution": "",
+      "country": "中国",
+      "category": "内资企业",
+      "industry": "生物产业",
+      "lines": [
+        116
+      ],
+      "worlds": {},
+      "natures": [],
+      "rankIssues": [],
+      "hongkongCapital": false
+    },
+    {
+      "id": "demo-u17",
+      "name": "演示企业17有限公司",
+      "short": "演示17",
+      "type": "意向投资企业",
+      "primaryNature": "2.世界500强(国内企业)",
+      "institution": "",
+      "country": "中国",
+      "category": "内资企业",
+      "industry": "营利性服务业",
+      "lines": [
+        117
+      ],
+      "worlds": {},
+      "natures": [],
+      "rankIssues": [],
+      "hongkongCapital": false
+    },
+    {
+      "id": "demo-u18",
+      "name": "演示企业18有限公司",
+      "short": "演示18",
+      "type": "意向投资企业",
+      "primaryNature": "3.中国民营企业500强",
+      "institution": "",
+      "country": "中国",
+      "category": "内资企业",
+      "industry": "新一代信息技术产业",
+      "lines": [
+        118
+      ],
+      "worlds": {},
+      "natures": [],
+      "rankIssues": [],
+      "hongkongCapital": false
+    },
+    {
+      "id": "demo-u19",
+      "name": "演示企业19有限公司",
+      "short": "演示19",
+      "type": "意向投资企业",
+      "primaryNature": "9.民营企业",
+      "institution": "",
+      "country": "中国",
+      "category": "内资企业",
+      "industry": "生物产业",
+      "lines": [
+        119
+      ],
+      "worlds": {},
+      "natures": [],
+      "rankIssues": [],
+      "hongkongCapital": false
+    },
+    {
+      "id": "demo-u20",
+      "name": "演示企业20有限公司",
+      "short": "演示20",
+      "type": "意向投资企业",
+      "primaryNature": "1.世界500强(外企)",
+      "institution": "",
+      "country": "中国",
+      "category": "内资企业",
+      "industry": "营利性服务业",
+      "lines": [
+        120
+      ],
+      "worlds": {},
+      "natures": [],
+      "rankIssues": [],
+      "hongkongCapital": false
+    },
+    {
+      "id": "demo-u21",
+      "name": "演示机构21",
+      "short": "演示21",
+      "type": "招商合作机构",
+      "primaryNature": "",
+      "institution": "商协会",
+      "country": "中国",
+      "category": "招商合作机构",
+      "industry": "新一代信息技术产业",
+      "lines": [
+        121
+      ],
+      "worlds": {},
+      "natures": [],
+      "rankIssues": [],
+      "hongkongCapital": false
+    },
+    {
+      "id": "demo-u22",
+      "name": "演示机构22",
+      "short": "演示22",
+      "type": "招商合作机构",
+      "primaryNature": "",
+      "institution": "商协会",
+      "country": "中国",
+      "category": "招商合作机构",
+      "industry": "生物产业",
+      "lines": [
+        122
+      ],
+      "worlds": {},
+      "natures": [],
+      "rankIssues": [],
+      "hongkongCapital": false
+    },
+    {
+      "id": "demo-u23",
+      "name": "演示机构23",
+      "short": "演示23",
+      "type": "招商合作机构",
+      "primaryNature": "",
+      "institution": "商协会",
+      "country": "中国",
+      "category": "招商合作机构",
+      "industry": "营利性服务业",
+      "lines": [
+        123
+      ],
+      "worlds": {},
+      "natures": [],
+      "rankIssues": [],
+      "hongkongCapital": false
+    },
+    {
+      "id": "demo-u24",
+      "name": "演示机构24",
+      "short": "演示24",
+      "type": "招商合作机构",
+      "primaryNature": "",
+      "institution": "商协会",
+      "country": "中国",
+      "category": "招商合作机构",
+      "industry": "新一代信息技术产业",
+      "lines": [
+        124
+      ],
+      "worlds": {},
+      "natures": [],
+      "rankIssues": [],
+      "hongkongCapital": false
+    }
+  ],
+  "guests": [
+    {
+      "id": "demo-g1",
+      "unitId": "demo-u1",
+      "name": "待定",
+      "title": "",
+      "short": "演示01",
+      "nationality": "未知",
+      "status": "是",
+      "owners": [
+        "龙岗区"
+      ],
+      "lines": [
+        101
+      ],
+      "priority": false,
+      "senior": false
+    },
+    {
+      "id": "demo-g2",
+      "unitId": "demo-u2",
+      "name": "待定",
+      "title": "",
+      "short": "演示02",
+      "nationality": "中国",
+      "status": "是",
+      "owners": [
+        "南山区"
+      ],
+      "lines": [
+        102
+      ],
+      "priority": false,
+      "senior": false
+    },
+    {
+      "id": "demo-g3",
+      "unitId": "demo-u3",
+      "name": "待定",
+      "title": "董事长",
+      "short": "演示03",
+      "nationality": "未知",
+      "status": "是",
+      "owners": [
+        "坪山区",
+        "市投资促进局"
+      ],
+      "lines": [
+        103
+      ],
+      "priority": false,
+      "senior": false
+    },
+    {
+      "id": "demo-g4",
+      "unitId": "demo-u4",
+      "name": "演示嘉宾04",
+      "title": "",
+      "short": "演示04",
+      "nationality": "未知",
+      "status": "是",
+      "owners": [
+        "福田区",
+        "市商务局"
+      ],
+      "lines": [
+        104
+      ],
+      "priority": false,
+      "senior": true
+    },
+    {
+      "id": "demo-g5",
+      "unitId": "demo-u5",
+      "name": "演示嘉宾05",
+      "title": "",
+      "short": "演示05",
+      "nationality": "中国",
+      "status": "是",
+      "owners": [
+        "光明区"
+      ],
+      "lines": [
+        105
+      ],
+      "priority": false,
+      "senior": true
+    },
+    {
+      "id": "demo-g6",
+      "unitId": "demo-u6",
+      "name": "演示嘉宾06",
+      "title": "董事长",
+      "short": "演示06",
+      "nationality": "未知",
+      "status": "是",
+      "owners": [
+        "盐田区",
+        "市投资促进局"
+      ],
+      "lines": [
+        106
+      ],
+      "priority": false,
+      "senior": true
+    },
+    {
+      "id": "demo-g7",
+      "unitId": "demo-u7",
+      "name": "演示嘉宾07",
+      "title": "董事长",
+      "short": "演示07",
+      "nationality": "中国香港",
+      "status": "是",
+      "owners": [
+        "宝安区"
+      ],
+      "lines": [
+        107
+      ],
+      "priority": true,
+      "senior": true
+    },
+    {
+      "id": "demo-g8",
+      "unitId": "demo-u8",
+      "name": "演示嘉宾08",
+      "title": "董事长",
+      "short": "演示08",
+      "nationality": "日本",
+      "status": "是",
+      "owners": [
+        "罗湖区",
+        "市商务局"
+      ],
+      "lines": [
+        108
+      ],
+      "priority": true,
+      "senior": true
+    },
+    {
+      "id": "demo-g9",
+      "unitId": "demo-u9",
+      "name": "演示嘉宾09",
+      "title": "董事长",
+      "short": "演示09",
+      "nationality": "中国",
+      "status": "是",
+      "owners": [
+        "龙华区",
+        "市投资促进局"
+      ],
+      "lines": [
+        109
+      ],
+      "priority": true,
+      "senior": true
+    },
+    {
+      "id": "demo-g10",
+      "unitId": "demo-u10",
+      "name": "演示嘉宾10",
+      "title": "董事长",
+      "short": "演示10",
+      "nationality": "中国",
+      "status": "是",
+      "owners": [
+        "大鹏新区"
+      ],
+      "lines": [
+        110
+      ],
+      "priority": true,
+      "senior": true
+    },
+    {
+      "id": "demo-g11",
+      "unitId": "demo-u11",
+      "name": "演示嘉宾11",
+      "title": "董事长",
+      "short": "演示11",
+      "nationality": "中国",
+      "status": "是",
+      "owners": [
+        "前海管理局"
+      ],
+      "lines": [
+        111
+      ],
+      "priority": true,
+      "senior": true
+    },
+    {
+      "id": "demo-g12",
+      "unitId": "demo-u12",
+      "name": "演示嘉宾12",
+      "title": "董事长",
+      "short": "演示12",
+      "nationality": "中国",
+      "status": "是",
+      "owners": [
+        "深汕特别合作区",
+        "市投资促进局"
+      ],
+      "lines": [
+        112
+      ],
+      "priority": true,
+      "senior": true
+    },
+    {
+      "id": "demo-g13",
+      "unitId": "demo-u13",
+      "name": "演示嘉宾13",
+      "title": "副总裁",
+      "short": "演示13",
+      "nationality": "中国",
+      "status": "是",
+      "owners": [
+        "龙岗区"
+      ],
+      "lines": [
+        113
+      ],
+      "priority": false,
+      "senior": true
+    },
+    {
+      "id": "demo-g14",
+      "unitId": "demo-u14",
+      "name": "演示嘉宾14",
+      "title": "副总裁",
+      "short": "演示14",
+      "nationality": "中国",
+      "status": "是",
+      "owners": [
+        "南山区"
+      ],
+      "lines": [
+        114
+      ],
+      "priority": false,
+      "senior": true
+    },
+    {
+      "id": "demo-g15",
+      "unitId": "demo-u15",
+      "name": "演示嘉宾15",
+      "title": "副总裁",
+      "short": "演示15",
+      "nationality": "中国",
+      "status": "是",
+      "owners": [
+        "坪山区",
+        "市投资促进局"
+      ],
+      "lines": [
+        115
+      ],
+      "priority": false,
+      "senior": true
+    },
+    {
+      "id": "demo-g16",
+      "unitId": "demo-u16",
+      "name": "演示嘉宾16",
+      "title": "副总裁",
+      "short": "演示16",
+      "nationality": "中国",
+      "status": "是",
+      "owners": [
+        "福田区",
+        "市商务局"
+      ],
+      "lines": [
+        116
+      ],
+      "priority": false,
+      "senior": true
+    },
+    {
+      "id": "demo-g17",
+      "unitId": "demo-u17",
+      "name": "演示嘉宾17",
+      "title": "副总裁",
+      "short": "演示17",
+      "nationality": "中国",
+      "status": "是",
+      "owners": [
+        "光明区"
+      ],
+      "lines": [
+        117
+      ],
+      "priority": false,
+      "senior": true
+    },
+    {
+      "id": "demo-g18",
+      "unitId": "demo-u18",
+      "name": "演示嘉宾18",
+      "title": "副总裁",
+      "short": "演示18",
+      "nationality": "中国",
+      "status": "是",
+      "owners": [
+        "盐田区",
+        "市投资促进局"
+      ],
+      "lines": [
+        118
+      ],
+      "priority": false,
+      "senior": true
+    },
+    {
+      "id": "demo-g19",
+      "unitId": "demo-u19",
+      "name": "演示嘉宾19",
+      "title": "参会代表",
+      "short": "演示19",
+      "nationality": "中国",
+      "status": "是",
+      "owners": [
+        "宝安区"
+      ],
+      "lines": [
+        119
+      ],
+      "priority": false,
+      "senior": false
+    },
+    {
+      "id": "demo-g20",
+      "unitId": "demo-u20",
+      "name": "演示嘉宾20",
+      "title": "参会代表",
+      "short": "演示20",
+      "nationality": "中国",
+      "status": "是",
+      "owners": [
+        "罗湖区",
+        "市商务局"
+      ],
+      "lines": [
+        120
+      ],
+      "priority": false,
+      "senior": false
+    },
+    {
+      "id": "demo-g21",
+      "unitId": "demo-u21",
+      "name": "演示嘉宾21",
+      "title": "参会代表",
+      "short": "演示21",
+      "nationality": "中国",
+      "status": "是",
+      "owners": [
+        "龙华区",
+        "市投资促进局"
+      ],
+      "lines": [
+        121
+      ],
+      "priority": false,
+      "senior": false
+    },
+    {
+      "id": "demo-g22",
+      "unitId": "demo-u22",
+      "name": "演示嘉宾22",
+      "title": "参会代表",
+      "short": "演示22",
+      "nationality": "中国",
+      "status": "是",
+      "owners": [
+        "大鹏新区"
+      ],
+      "lines": [
+        122
+      ],
+      "priority": false,
+      "senior": false
+    },
+    {
+      "id": "demo-g23",
+      "unitId": "demo-u23",
+      "name": "演示嘉宾23",
+      "title": "参会代表",
+      "short": "演示23",
+      "nationality": "中国",
+      "status": "是",
+      "owners": [
+        "前海管理局"
+      ],
+      "lines": [
+        123
+      ],
+      "priority": false,
+      "senior": false
+    },
+    {
+      "id": "demo-g24",
+      "unitId": "demo-u24",
+      "name": "演示嘉宾24",
+      "title": "参会代表",
+      "short": "演示24",
+      "nationality": "中国",
+      "status": "是",
+      "owners": [
+        "深汕特别合作区",
+        "市投资促进局"
+      ],
+      "lines": [
+        124
+      ],
+      "priority": false,
+      "senior": false
+    },
+    {
+      "id": "demo-g25",
+      "unitId": "demo-u1",
+      "name": "演示嘉宾25",
+      "title": "参会代表",
+      "short": "演示01",
+      "nationality": "中国",
+      "status": "是",
+      "owners": [
+        "龙岗区"
+      ],
+      "lines": [
+        125
+      ],
+      "priority": false,
+      "senior": false
+    },
+    {
+      "id": "demo-g26",
+      "unitId": "demo-u2",
+      "name": "演示嘉宾26",
+      "title": "参会代表",
+      "short": "演示02",
+      "nationality": "中国",
+      "status": "是",
+      "owners": [
+        "南山区"
+      ],
+      "lines": [
+        126
+      ],
+      "priority": false,
+      "senior": false
+    },
+    {
+      "id": "demo-g27",
+      "unitId": "demo-u3",
+      "name": "演示嘉宾27",
+      "title": "参会代表",
+      "short": "演示03",
+      "nationality": "中国",
+      "status": "是",
+      "owners": [
+        "坪山区",
+        "市投资促进局"
+      ],
+      "lines": [
+        127
+      ],
+      "priority": false,
+      "senior": false
+    },
+    {
+      "id": "demo-g28",
+      "unitId": "demo-u4",
+      "name": "演示嘉宾28",
+      "title": "参会代表",
+      "short": "演示04",
+      "nationality": "中国",
+      "status": "是",
+      "owners": [
+        "福田区",
+        "市商务局"
+      ],
+      "lines": [
+        128
+      ],
+      "priority": false,
+      "senior": false
+    },
+    {
+      "id": "demo-g29",
+      "unitId": "demo-u5",
+      "name": "演示嘉宾29",
+      "title": "参会代表",
+      "short": "演示05",
+      "nationality": "中国",
+      "status": "是",
+      "owners": [
+        "光明区"
+      ],
+      "lines": [
+        129
+      ],
+      "priority": false,
+      "senior": false
+    },
+    {
+      "id": "demo-g30",
+      "unitId": "demo-u6",
+      "name": "演示嘉宾30",
+      "title": "参会代表",
+      "short": "演示06",
+      "nationality": "中国",
+      "status": "是",
+      "owners": [
+        "盐田区",
+        "市投资促进局"
+      ],
+      "lines": [
+        130
+      ],
+      "priority": false,
+      "senior": false
+    },
+    {
+      "id": "demo-g31",
+      "unitId": "demo-u7",
+      "name": "演示嘉宾31",
+      "title": "参会代表",
+      "short": "演示07",
+      "nationality": "中国",
+      "status": "是",
+      "owners": [
+        "宝安区"
+      ],
+      "lines": [
+        131
+      ],
+      "priority": false,
+      "senior": false
+    },
+    {
+      "id": "demo-g32",
+      "unitId": "demo-u8",
+      "name": "演示嘉宾32",
+      "title": "参会代表",
+      "short": "演示08",
+      "nationality": "中国",
+      "status": "是",
+      "owners": [
+        "罗湖区",
+        "市商务局"
+      ],
+      "lines": [
+        132
+      ],
+      "priority": false,
+      "senior": false
+    },
+    {
+      "id": "demo-g33",
+      "unitId": "demo-u9",
+      "name": "演示嘉宾33",
+      "title": "参会代表",
+      "short": "演示09",
+      "nationality": "中国",
+      "status": "是",
+      "owners": [
+        "龙华区",
+        "市投资促进局"
+      ],
+      "lines": [
+        133
+      ],
+      "priority": false,
+      "senior": false
+    },
+    {
+      "id": "demo-g34",
+      "unitId": "demo-u10",
+      "name": "演示嘉宾34",
+      "title": "参会代表",
+      "short": "演示10",
+      "nationality": "中国",
+      "status": "是",
+      "owners": [
+        "大鹏新区"
+      ],
+      "lines": [
+        134
+      ],
+      "priority": false,
+      "senior": false
+    },
+    {
+      "id": "demo-g35",
+      "unitId": "demo-u11",
+      "name": "演示嘉宾35",
+      "title": "参会代表",
+      "short": "演示11",
+      "nationality": "中国",
+      "status": "是",
+      "owners": [
+        "前海管理局"
+      ],
+      "lines": [
+        135
+      ],
+      "priority": false,
+      "senior": false
+    },
+    {
+      "id": "demo-g36",
+      "unitId": "demo-u12",
+      "name": "演示嘉宾36",
+      "title": "参会代表",
+      "short": "演示12",
+      "nationality": "中国",
+      "status": "是",
+      "owners": [
+        "深汕特别合作区",
+        "市投资促进局"
+      ],
+      "lines": [
+        136
+      ],
+      "priority": false,
+      "senior": false
+    },
+    {
+      "id": "demo-g37",
+      "unitId": "demo-u13",
+      "name": "演示嘉宾37",
+      "title": "参会代表",
+      "short": "演示13",
+      "nationality": "中国",
+      "status": "待定",
+      "owners": [
+        "龙岗区"
+      ],
+      "lines": [
+        137
+      ],
+      "priority": false,
+      "senior": false
+    },
+    {
+      "id": "demo-g38",
+      "unitId": "demo-u14",
+      "name": "演示嘉宾38",
+      "title": "参会代表",
+      "short": "演示14",
+      "nationality": "中国",
+      "status": "空白",
+      "owners": [
+        "南山区"
+      ],
+      "lines": [
+        138
+      ],
+      "priority": false,
+      "senior": false
+    },
+    {
+      "id": "demo-g39",
+      "unitId": "demo-u15",
+      "name": "演示嘉宾39",
+      "title": "参会代表",
+      "short": "演示15",
+      "nationality": "中国",
+      "status": "空白",
+      "owners": [
+        "坪山区",
+        "市投资促进局"
+      ],
+      "lines": [
+        139
+      ],
+      "priority": false,
+      "senior": false
+    },
+    {
+      "id": "demo-g40",
+      "unitId": "demo-u16",
+      "name": "演示嘉宾40",
+      "title": "参会代表",
+      "short": "演示16",
+      "nationality": "中国",
+      "status": "否",
+      "owners": [
+        "福田区",
+        "市商务局"
+      ],
+      "lines": [
+        140
+      ],
+      "priority": false,
+      "senior": false
+    }
+  ],
+  "departments": [
+    {
+      "label": "龙岗区",
+      "target": 100
+    },
+    {
+      "label": "南山区",
+      "target": 100
+    },
+    {
+      "label": "坪山区",
+      "target": 100
+    },
+    {
+      "label": "福田区",
+      "target": 100
+    },
+    {
+      "label": "光明区",
+      "target": 100
+    },
+    {
+      "label": "盐田区",
+      "target": 100
+    },
+    {
+      "label": "宝安区",
+      "target": 100
+    },
+    {
+      "label": "罗湖区",
+      "target": 100
+    },
+    {
+      "label": "龙华区",
+      "target": 100
+    },
+    {
+      "label": "大鹏新区",
+      "target": 50
+    },
+    {
+      "label": "前海管理局",
+      "target": 100
+    },
+    {
+      "label": "深汕特别合作区",
+      "target": 50
+    },
+    {
+      "label": "市财政局",
+      "target": 5
+    },
+    {
+      "label": "市投资促进局",
+      "target": 320
+    },
+    {
+      "label": "市中小企业服务局",
+      "target": 10
+    },
+    {
+      "label": "市国资委",
+      "target": 10
+    },
+    {
+      "label": "市人力资源保障局",
+      "target": 5
+    },
+    {
+      "label": "市规划和自然资源局 (市海洋局)",
+      "target": 20
+    },
+    {
+      "label": "市科技创新局",
+      "target": 20
+    },
+    {
+      "label": "市商务局",
+      "target": 140
+    },
+    {
+      "label": "市工业和信息化局",
+      "target": 30
+    },
+    {
+      "label": "市委港澳办",
+      "target": 10
+    },
+    {
+      "label": "市住房和建设局",
+      "target": 5
+    },
+    {
+      "label": "市卫生健康委",
+      "target": 5
+    },
+    {
+      "label": "市人工智能办",
+      "target": 15
+    },
+    {
+      "label": "市文化广电旅游体育局",
+      "target": 15
+    },
+    {
+      "label": "市交通运输局",
+      "target": 20
+    },
+    {
+      "label": "市委金融办",
+      "target": 20
+    },
+    {
+      "label": "市发展改革委",
+      "target": 30
+    },
+    {
+      "label": "市贸促会",
+      "target": 30
+    },
+    {
+      "label": "市汽车办",
+      "target": 15
+    },
+    {
+      "label": "市药械办",
+      "target": 15
+    },
+    {
+      "label": "市生态环境局",
+      "target": 5
+    },
+    {
+      "label": "市市场监管局",
+      "target": 5
+    },
+    {
+      "label": "市委外办",
+      "target": 10
+    },
+    {
+      "label": "市政务和数据局",
+      "target": 10
+    }
+  ],
+  "districts": [
+    "龙岗区",
+    "南山区",
+    "坪山区",
+    "福田区",
+    "光明区",
+    "盐田区",
+    "宝安区",
+    "罗湖区",
+    "龙华区",
+    "大鹏新区",
+    "前海管理局",
+    "深汕特别合作区"
+  ],
+  "rules": [
+    {
+      "name": "数据统计规则.md",
+      "text": "# 演示规则\n\n本文件是公开演示说明，不包含真实企业或嘉宾个案。\n\n1. 参会为“是”计入确认口径；待定、空白另列暂计；否不计。\n2. 同一单位按稳定unitId去重；同一嘉宾按稳定id识别。\n3. 多邀请来源保留，各部门分别计成果，部门内部去重。\n4. 名单已是处理结果，前端不执行企业识别与重复嘉宾合并。\n5. 姓名、职务、国籍缺失需补齐，不自动删除已确认参会名额。"
+    },
+    {
+      "name": "统计口径影响说明.md",
+      "text": "# 统计影响\n\n确认参会单位可包括企业及机构。KPI按确认单位数计算。部门成果加总可以大于全市去重数。\n\n修改浏览器草稿会影响当前浏览器试算，未发布为正式批次。"
+    },
+    {
+      "name": "规则待确认问题.md",
+      "text": "# 待确认问题\n\n示例：人选待定名额、行业归类、单位性质冲突。真实核对个案应保存在私有数据中。"
+    },
+    {
+      "name": "重点嘉宾确认规则.md",
+      "text": "# 重点嘉宾\n\n先榜单与职务，再未上榜企业高职级，最后机构正职负责人。五项信息完整。第一版使用预先核定的priority和senior标签，修改职务不会自动重新筛选。"
+    }
+  ],
+  "baseline": {
+    "date": "2026-11-18 17:57（虚构演示）",
+    "ruleDate": "2026-11-19（演示规则）",
+    "units": 24,
+    "guests": 36,
+    "priority": 6,
+    "senior": 15,
+    "mode": "demo"
+  }
+}
