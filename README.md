@@ -6,6 +6,12 @@
 
 本仓库保存可以独立运行的前端代码和**完全虚构的演示数据**。真实企业、嘉宾名单、联系人、原始Excel及业务核对个案不包含在公开仓库中。
 
+**公开演示网址（GitHub Pages，无需登录）：**
+
+https://mcdonaldsqueen.github.io/guest_DataExport_ManageSystem/
+
+公开演示已部署成功，使用虚构数据。每位访问者的核对草稿保存在自己的浏览器，不会共享修改。
+
 **当前可用的私有工作台：**
 
 https://sz-investment-workbench-kk.folksywand2.chatgpt.site
