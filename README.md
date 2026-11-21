@@ -10,7 +10,7 @@
 
 https://sz-investment-workbench-kk.folksywand2.chatgpt.site
 
-该地址的访问权限由托管平台控制，仅授权账号可访问。GitHub仓库公开不代表这个私有工作台公开。仓库内的GitHub Pages工作流是另一个可选的、仅用于演示数据的部署入口，不等于已启用GitHub Pages。
+该地址的访问权限由托管平台控制，仅授权账号可访问。GitHub仓库公开不代表这个私有工作台公开。仓库另提供GitHub Pages公开演示部署：首次需要在仓库Settings → Pages中将来源设为GitHub Actions；随后main分支的应用文件更新会自动部署。是否上线以部署工作流成功记录为准。
 
 ---
 
@@ -425,7 +425,7 @@ python scripts/check_office.py
 
 ### 11.3 GitHub Pages公开演示
 
-仓库已提供手动部署工作流 `.github/workflows/deploy-pages.yml`。
+仓库已提供部署工作流 `.github/workflows/deploy-pages.yml`，支持main分支应用文件变更自动触发，以及手动触发。
 
 操作步骤：
 
@@ -436,7 +436,7 @@ python scripts/check_office.py
 5. 点击 `Run workflow`，选择 `main`。
 6. 等待部署完成，使用工作流环境输出的实际地址访问。
 
-该工作流只有手动触发，没有默认每次推送都公开发布。未完成仓库Pages设置时，工作流可能报配置错误；添加工作流文件本身不代表Pages已上线。
+首次启用后，main分支的dist、scripts、tests、package.json或部署工作流发生变化会自动发布。部署前会检查baseline.mode必须为demo。该标记只是防误操作，不能代替检查数据内容。未完成仓库Pages设置时，工作流会报配置错误；添加工作流文件本身不代表Pages已上线。
 
 ### 11.4 自动检查
 

@@ -1,5 +1,13 @@
 name: Deploy public demo to GitHub Pages
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'dist/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'package.json'
+      - '.github/workflows/deploy-pages.yml'
   workflow_dispatch:
 permissions:
   contents: read
@@ -20,6 +28,8 @@ jobs:
         with:
           node-version: '22'
       - run: npm test
+      - name: Verify public demo snapshot
+        run: node -e "const d=JSON.parse(require('fs').readFileSync('dist/data.json','utf8'));if(d.baseline.mode!=='demo')throw Error('Public deployment requires an explicitly marked demo snapshot')"
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
