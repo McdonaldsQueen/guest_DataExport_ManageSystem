@@ -1,7 +1,7 @@
 from pathlib import Path
 from zipfile import ZipFile
 import xml.etree.ElementTree as E
-for name in ['export.xlsx','report.docx']:
+for name in ['export.xlsx','processed.xlsx','report.docx']:
  p=Path('qa')/name
  with ZipFile(p) as z:
   assert z.testzip() is None

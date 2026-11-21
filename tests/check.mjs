@@ -4,8 +4,8 @@ import '../scripts/validate.mjs';
 const nodes=new Map();
 function node(k){if(!nodes.has(k))nodes.set(k,{innerHTML:'',textContent:'',hidden:true,style:{},addEventListener(){},querySelector(){return null}});return nodes.get(k)}
 const data=JSON.parse(fs.readFileSync('dist/data.json','utf8'));
-const context={console,Blob,TextEncoder,TextDecoder,DataView,Uint8Array,ArrayBuffer,URL,setTimeout,clearTimeout,structuredClone,Map,Set,Intl,JSON,Math,Date,FormData,location:{hash:'#overview'},localStorage:{getItem(){return null},setItem(){}},window:{addEventListener(){},scrollTo(){}},navigator:{},document:{querySelector:node,addEventListener(){},body:{style:{}}},fetch:async()=>({ok:true,json:async()=>data})};
-vm.createContext(context);for(const f of ['office.js','app.js'])vm.runInContext(fs.readFileSync('dist/'+f,'utf8'),context);
+const context={console,Blob,TextEncoder,TextDecoder,DataView,Uint8Array,ArrayBuffer,URL,setTimeout,clearTimeout,structuredClone,Map,Set,Intl,JSON,Math,Date,FormData,location:{hash:'#overview'},localStorage:{getItem(){return null},setItem(){}},window:{addEventListener(){},scrollTo(){}},navigator:{},document:{querySelector:node,addEventListener(){},body:{style:{}}},fetch:async url=>({ok:true,json:async()=>url==='processing-rules.json'?JSON.parse(fs.readFileSync('dist/processing-rules.json','utf8')):structuredClone(data)})};
+vm.createContext(context);for(const f of ['office.js','processing.js','app.js','integration.js'])vm.runInContext(fs.readFileSync('dist/'+f,'utf8'),context);
 await new Promise(r=>setTimeout(r,20));
 const run=s=>vm.runInContext(s,context),assert=(v,m)=>{if(!v)throw Error(m)};
 assert(run('yes().length')===data.baseline.guests,'confirmed guests match snapshot');

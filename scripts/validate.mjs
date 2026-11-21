@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import vm from 'node:vm';
 for(const f of ['index.html','style.css','app.js','office.js','data.json'])if(!fs.existsSync('dist/'+f))throw Error('Missing '+f);
-new vm.Script(fs.readFileSync('dist/app.js','utf8'));
+for(const f of ['app.js','processing.js','integration.js','xlsx-reader.js'])new vm.Script(fs.readFileSync('dist/'+f,'utf8'));
 new vm.Script(fs.readFileSync('dist/office.js','utf8'));
 const d=JSON.parse(fs.readFileSync('dist/data.json','utf8'));
 for(const key of ['units','guests','departments','districts','rules'])if(!Array.isArray(d[key]))throw Error('Invalid '+key);

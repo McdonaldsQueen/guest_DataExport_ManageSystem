@@ -1,0 +1,57 @@
+import fs from 'node:fs';
+import vm from 'node:vm';
+import assert from 'node:assert/strict';
+import {createRequire} from 'node:module';
+const require=createRequire(import.meta.url);
+const JSZip=require('../dist/vendor/jszip.min.js'),sax=require('../dist/vendor/sax.js');
+const base=JSON.parse(fs.readFileSync('dist/data.json','utf8'));
+const config=JSON.parse(fs.readFileSync('dist/processing-rules.json','utf8'));
+const nodes=new Map();
+function node(k){if(!nodes.has(k))nodes.set(k,{innerHTML:'',textContent:'',style:{},addEventListener(){},querySelector(){return null}});return nodes.get(k)}
+const c={JSZip,sax,console,structuredClone,Blob,TextEncoder,TextDecoder,DataView,Uint8Array,ArrayBuffer,URL,setTimeout,clearTimeout,FormData,location:{hash:'#overview'},window:{addEventListener(){},scrollTo(){}},navigator:{},localStorage:{setItem(){},getItem(){return null}},document:{querySelector:node,addEventListener(){},body:{style:{}}},fetch:async url=>({ok:true,json:async()=>structuredClone(url==='processing-rules.json'?config:base)})};
+vm.createContext(c);for(const f of ['office.js','processing.js','xlsx-reader.js','app.js','integration.js'])vm.runInContext(fs.readFileSync('dist/'+f,'utf8'),c);
+await new Promise(r=>setTimeout(r,20));
+const engine=c.Processing.create(config),run=s=>vm.runInContext(s,c);
+function row(line,name,person,title,status='是',owner='南山区',nature='9.民营企业'){const values=Array(22).fill('');Object.assign(values,{0:String(line),1:name,2:'演示简称',3:'中国',4:'意向投资企业',5:nature,7:'金融',8:person,9:title,10:'中国',13:owner,16:status});return{line,sheet:'嘉宾表',values}}
+const rows=[row(2,'演示甲企业','测试甲','演示甲企业中国公司事务副总裁'),row(3,'演示甲企业','测试甲','副总裁','是','福田区商务局'),row(4,'演示乙企业','待定','','是','南山区'),row(5,'演示乙企业','','','是','福田区商务局'),row(6,'演示丙企业','测试乙','总裁',''),row(7,'演示丁企业','测试丙','总裁','待定'),row(8,'演示戊企业','测试丁','总裁','否'),row(9,'演示己企业','测试戊','科技CEO','是')];
+const result=engine.fromRecords(rows,base,{fileName:'synthetic.xlsx',date:'2026-11-21'});
+assert.equal(result.baseline.units,3);assert.equal(result.baseline.guests,3);
+assert.equal(result.guests.find(g=>g.name==='测试甲').title,'演示甲企业中国公司事务副总裁');
+assert.equal(result.guests.find(g=>g.name==='测试甲').owners.length,2);
+assert.equal(result.guests.filter(g=>g.anonymous).length,1);
+assert.equal(result.guests.filter(g=>g.status==='空白').length,1);
+assert.equal(result.guests.filter(g=>g.status==='待定').length,1);
+assert.equal(result.guests.find(g=>g.name==='测试戊').senior,true);
+const conflict=engine.fromRecords([row(1,'演示甲','同名','总裁'),row(2,'演示甲','同名','总裁','否')],base);
+assert.equal(conflict.guests[0].status,'待定');assert.equal(conflict.baseline.guests,0);
+const titles=engine.fromRecords([row(1,'演示甲','同名','政府事务总监','是','市投资促进局'),row(2,'演示甲','同名','高级经理','是','南山区')],base);
+assert.equal(titles.guests[0].title,'高级经理');
+const nature=engine.fromRecords([row(1,'演示甲','甲','总裁','是','南山区','7.独角兽'),row(2,'演示甲','乙','总裁','是','南山区','4.外资企业')],base);
+assert.match(nature.units[0].primaryNature,/^4\./);
+const mapped=engine.fromRecords([row(1,'别名甲','甲','总裁'),row(2,'标准甲','乙','总裁')],base,{aliases:{[c.Processing.key('别名甲')]:'标准甲'}});
+assert.equal(mapped.baseline.units,1);assert.equal(mapped.baseline.guests,2);
+const ranks={...config,companyAliases:[],verifiedRanks:{},world:[{year:'2025',name:'演示榜单甲集团',country:'中国',rank:1},{year:'2026',name:'演示榜单乙集团',country:'美国',rank:2}],private:[]};
+const ranked=c.Processing.create(ranks).fromRecords([row(1,'演示榜单甲集团','甲','董事长'),row(2,'演示榜单乙集团','乙','董事长')],base);
+assert.match(ranked.units[0].primaryNature,/^2\./);assert.match(ranked.units[1].primaryNature,/^1\./);assert.equal(ranked.baseline.priority,2);
+// Exercise actual compressed XLSX parsing, header recognition and source line preservation.
+const original=run('Office').xlsx(config.headers,rows.map(r=>r.values),'原始嘉宾');
+const zip=await JSZip.loadAsync(await original.blob.arrayBuffer());
+const compressed=await zip.generateAsync({type:'uint8array',compression:'DEFLATE'});
+const sheets=await c.XlsxReader.read(compressed),parsed=engine.parseSheets(sheets,base);
+assert.equal(parsed.records.length,rows.length);assert.equal(parsed.records[0].line,2);
+const round=engine.fromRecords(parsed.records,base,{fileName:'compressed.xlsx'});
+assert.equal(round.baseline.guests,3);assert.equal(round.baseline.units,3);
+c.testBatch=round;run('applyBatch(testBatch)');
+assert.equal(run('yes().length'),3);assert.equal(run('yesUnits().length'),3);
+assert.ok(run('reportText()').includes('确认参会嘉宾3人'));
+assert.equal(run('guestRows(yes()).length'),3);
+run("G.find(g=>g.name==='测试戊').title='助理';save()");
+assert.equal(run("G.find(g=>g.name==='测试戊').senior"),false);
+const backup=run("({format:'investment-workspace-v2',data:D,baseGuests:baseG,edits,log,reviewed})");
+c.testBackup=backup;run('validateBackup(testBackup)');
+c.badBackup={format:'investment-workspace-v2',data:{units:[],guests:[]},baseGuests:[]};
+assert.throws(()=>run('validateBackup(badBackup)'));
+for(const name of ['overview','units','guests','issues','departments','imports','exports','rules']){run(`location.hash='#${name}';render()`);assert.ok(node('#main').innerHTML.length>100)}
+fs.mkdirSync('qa',{recursive:true});const exported=run("Office.xlsx(['企业全称','企业简称','企业类型','嘉宾姓名','嘉宾职务'],guestRows(yes()),'重算后名单')");fs.writeFileSync('qa/processed.xlsx',new Uint8Array(await exported.blob.arrayBuffer()));
+await run('workspaceWrite');
+console.log('PASS: compressed XLSX import; actual row numbers; duplicate title and owner rules; anonymous slots; status conflicts; nature priority; 2025/2026 union; aliases; apply updates UI/report/export; edits recalculate; backup validation; eight-page rendering.');
