@@ -1,6 +1,6 @@
 {
   "name": "guest-dataexport-managesystem",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "private": true,
   "description": "招商大会嘉宾名单核对、统计与文件导出工作台",
   "engines": {
