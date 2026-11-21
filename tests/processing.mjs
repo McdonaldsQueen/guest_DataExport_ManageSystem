@@ -54,4 +54,5 @@ assert.throws(()=>run('validateBackup(badBackup)'));
 for(const name of ['overview','units','guests','issues','departments','imports','exports','rules']){run(`location.hash='#${name}';render()`);assert.ok(node('#main').innerHTML.length>100)}
 fs.mkdirSync('qa',{recursive:true});const exported=run("Office.xlsx(['企业全称','企业简称','企业类型','嘉宾姓名','嘉宾职务'],guestRows(yes()),'重算后名单')");fs.writeFileSync('qa/processed.xlsx',new Uint8Array(await exported.blob.arrayBuffer()));
 await run('workspaceWrite');
+run('batchStorage=async()=>testBackup');await run('init()');assert.equal(run('yes().length'),3,'real imported batch survives startup');c.demoSaved=structuredClone(backup);c.demoSaved.data.baseline.mode='demo';run('batchStorage=async()=>demoSaved');await run('init()');assert.equal(run('G.length'),0,'old saved demo is discarded');assert.equal(run('D.units.length'),0,'no example units after startup');
 console.log('PASS: compressed XLSX import; actual row numbers; duplicate title and owner rules; anonymous slots; status conflicts; nature priority; 2025/2026 union; aliases; apply updates UI/report/export; edits recalculate; backup validation; eight-page rendering.');

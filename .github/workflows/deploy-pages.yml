@@ -1,4 +1,4 @@
-name: Deploy public demo to GitHub Pages
+name: Deploy workbench to GitHub Pages
 on:
   push:
     branches: [main]
@@ -28,8 +28,8 @@ jobs:
         with:
           node-version: '22'
       - run: npm test
-      - name: Verify public demo snapshot
-        run: node -e "const d=JSON.parse(require('fs').readFileSync('dist/data.json','utf8'));if(d.baseline.mode!=='demo')throw Error('Public deployment requires an explicitly marked demo snapshot')"
+      - name: Verify empty public starting state
+        run: node -e "const d=JSON.parse(require('fs').readFileSync('dist/data.json','utf8'));if(d.baseline.mode!=='empty'||d.units.length||d.guests.length)throw Error('Public deployment must start empty; rosters belong in local imports')"
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
