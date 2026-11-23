@@ -4,13 +4,14 @@ const version='2026-11-23-v0.3';
 const norm=v=>String(v??'').normalize('NFKC').trim().replace(/\s+/g,'');
 const id=v=>norm(v).replace(/^中国(?:香港|澳门|台湾)/,'').replace(/(?:股份有限公司|有限责任公司|集团有限公司|有限公司|集团|公司)+$/,'').toLowerCase();
 const signature=u=>JSON.stringify([u.id,u.name,u.canonicalKey,u.type,u.primaryNature,u.institution,u.natures,u.worlds,u.private]);
-function assess(g,u){
+function assess(g,u,settings={}){
+ const allow=settings.priorityRoles||root.RuleProfiles.settings.priorityRoles;
  const t=norm(g.title),notes=[],reasons=[];
- const state=/中央企业|国有企业|央企|国企/.test([u.primaryNature,...u.natures||[]].join('|'));
- const foreign=/外资企业|世界500强\(外企\)/.test([u.primaryNature,...u.natures||[]].join('|'))||Object.values(u.worlds||{}).some(w=>w.country&&!['中国','China','中国大陆'].includes(w.country));
+ const state=allow.includes('state')&&/中央企业|国有企业|央企|国企/.test([u.primaryNature,...u.natures||[]].join('|'));
+ const foreign=allow.includes('foreign')&&(/外资企业|世界500强\(外企\)/.test([u.primaryNature,...u.natures||[]].join('|'))||Object.values(u.worlds||{}).some(w=>w.country&&!['中国','China','中国大陆'].includes(w.country)));
  const professional=/会计|审计|律师|法律|咨询|投资|资本|基金|合伙|金融/.test([u.name,u.industry].join('|'));
- const institution=u.type==='招商合作机构';
- const founder=/创始人|co-?founder|founder/i.test(t),partner=/合伙人|partner/i.test(t),chair=/主席|chair(?:man|person)/i.test(t),gm=/总经理|generalmanager/i.test(t),party=/党委(?:副)?书记/.test(t);
+ const institution=u.type==='招商合作机构';if(institution&&!allow.includes('institution'))return{potential:false,eligible:false,scope:'unknown',notes:[],reasons:[],version};
+ const founder=allow.includes('founder')&&/创始人|co-?founder|founder/i.test(t),partner=allow.includes('partner')&&/合伙人|partner/i.test(t),chair=allow.includes('foreign')&&/主席|chair(?:man|person)/i.test(t),gm=/总经理|generalmanager/i.test(t),party=/党委(?:副)?书记/.test(t);
  const executive=g.senior||/\b(?:president|vice\s*president)\b/i.test(g.title||'');
  const china=/(?:中国区|大中华区)(?:主席|董事长|总裁|总经理|负责人|chair(?:man|person)|president|generalmanager|head)/i.test(t);
  const regionCandidate=/中国区|大中华区/.test(t)&&/负责人|总经理|总监|head|manager/i.test(t);
@@ -67,3 +68,4 @@ function assess(g,u){
 }
 root.PriorityRules={version,signature,assess};
 })(globalThis);
+

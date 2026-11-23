@@ -4,8 +4,8 @@ import '../scripts/validate.mjs';
 const nodes=new Map();
 function node(k){if(!nodes.has(k))nodes.set(k,{innerHTML:'',textContent:'',hidden:true,style:{},addEventListener(){},querySelector(){return null}});return nodes.get(k)}
 const data=JSON.parse(fs.readFileSync('dist/data.json','utf8'));
-const context={console,Blob,TextEncoder,TextDecoder,DataView,Uint8Array,ArrayBuffer,URL,setTimeout,clearTimeout,structuredClone,Map,Set,Intl,JSON,Math,Date,FormData,location:{hash:'#overview'},localStorage:{getItem(){return null},setItem(){}},window:{addEventListener(){},scrollTo(){}},navigator:{},document:{querySelector:node,addEventListener(){},body:{style:{}}},fetch:async url=>({ok:true,json:async()=>url==='processing-rules.json'?JSON.parse(fs.readFileSync('dist/processing-rules.json','utf8')):structuredClone(data)})};
-vm.createContext(context);for(const f of ['office.js','priority-rules.js','processing.js','app.js','integration.js','priority-ui.js'])vm.runInContext(fs.readFileSync('dist/'+f,'utf8'),context);
+const context={console,Blob,TextEncoder,TextDecoder,DataView,Uint8Array,ArrayBuffer,URL,setTimeout,clearTimeout,structuredClone,Map,Set,Intl,JSON,Math,Date,FormData,location:{hash:'#overview'},localStorage:{getItem(){return null},setItem(){}},window:{addEventListener(){},scrollTo(){}},navigator:{},document:{querySelector:node,addEventListener(){},body:{style:{}}},fetch:async url=>({ok:true,json:async()=>url==='default-rulebook.json'?JSON.parse(fs.readFileSync('dist/default-rulebook.json','utf8')):url==='processing-rules.json'?JSON.parse(fs.readFileSync('dist/processing-rules.json','utf8')):structuredClone(data)})};
+vm.createContext(context);for(const f of ['office.js','rule-profiles.js','rule-rebuild.js','priority-rules.js','processing.js','app.js','rule-workspace.js','integration.js','priority-ui.js'])vm.runInContext(fs.readFileSync('dist/'+f,'utf8'),context);
 await new Promise(r=>setTimeout(r,20));
 const run=s=>vm.runInContext(s,context),assert=(v,m)=>{if(!v)throw Error(m)};
 assert(run('yes().length')===data.baseline.guests,'confirmed guests match snapshot');
@@ -18,3 +18,4 @@ assert(run('G.length')===0,'initial workspace has no example guests');assert(run
 let file=run("Office.xlsx(['企业全称','企业简称','企业类型','嘉宾姓名','嘉宾职务'],guestRows(baseG.filter(g=>g.status==='是'&&g.senior)),'高管测试')");fs.mkdirSync('qa',{recursive:true});fs.writeFileSync('qa/export.xlsx',new Uint8Array(await file.blob.arrayBuffer()));
 let doc=run("Office.docx(reportText(),'汇报测试')");fs.writeFileSync('qa/report.docx',new Uint8Array(await doc.blob.arrayBuffer()));
 console.log('PASS: 8-page render smoke tests; snapshot counts; search; missing-field resolution; attendance recalculation; XLSX/DOCX generation. Browser/E2E tests are not covered.');
+

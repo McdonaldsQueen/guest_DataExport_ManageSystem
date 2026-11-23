@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 const config=JSON.parse(fs.readFileSync('dist/processing-rules.json','utf8'));
 const base=JSON.parse(fs.readFileSync('dist/data.json','utf8'));
 const ctx={structuredClone};vm.createContext(ctx);
-for(const file of ['priority-rules.js','processing.js'])vm.runInContext(fs.readFileSync('dist/'+file,'utf8'),ctx);
+for(const file of ['rule-profiles.js','priority-rules.js','processing.js'])vm.runInContext(fs.readFileSync('dist/'+file,'utf8'),ctx);
 const engine=ctx.Processing.create(config);
 function sample(title,{nature='9.民营企业',name='测试企业甲',type='意向投资企业',industry='金融',status='是',person='测试嘉宾'}={}){
  const values=Array(22).fill('');Object.assign(values,{1:name,2:'测试简称',3:'中国',4:type,5:type==='意向投资企业'?nature:'',6:type==='招商合作机构'?'商协会':'',7:industry,8:person,9:title,10:'中国',13:'南山区',16:status});
@@ -54,3 +54,4 @@ const snapshot=structuredClone(founder);engine.screen(snapshot);include(snapshot
 assert.equal(founder.baseline.priorityRuleDate,'2026-11-23-v0.3');
 assert.ok(founder.rules.some(r=>r.name==='重点嘉宾确认规则.md'&&r.text.includes('创始人')));
 console.log('PASS: contextual priority roles, secondary state tags, English titles, evidence gates, institutions, exclusions, stale review invalidation and legacy count invariance.');
+

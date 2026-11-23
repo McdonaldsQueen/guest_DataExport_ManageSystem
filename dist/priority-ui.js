@@ -3,7 +3,7 @@
 const priorityScopeNames={group:'集团／总部／全球',china:'中国区／大中华区',subject:'本参会主体',department:'部门／其他下属范围',unknown:'范围待核实'};
 const priorityTierNames={A:'A 榜单企业',B:'B 其他企业',C:'C 机构'};
 const priorityOverview=overview;
-overview=function(){return priorityOverview()+`<section class="panel"><div class="panel-body"><h2>重点嘉宾筛选</h2><p>已入选 ${yes().filter(g=>g.priority).length} 人；重点候选待核对 ${yes().filter(g=>g.priorityCandidate).length} 人。候选不计入已入选人数，原总裁及副总裁以上口径单独保留。</p><button class="btn" data-action="view-priority-candidates">查看重点候选</button><p class="tiny">重点规则：${esc(D.baseline.priorityRuleDate||PriorityRules.version)}。集团负责人和中国区一把手同层，其他明确主体负责人随后。</p></div></section>`};
+overview=function(){return priorityOverview()+`<section class="panel"><div class="panel-body"><h2>重点嘉宾筛选</h2><p>已入选 ${yes().filter(g=>g.priority).length} 人；重点候选待核对 ${yes().filter(g=>g.priorityCandidate).length} 人。候选不计入已入选人数，高管口径与重点筛选分别配置。</p><button class="btn" data-action="view-priority-candidates">查看重点候选</button><p class="tiny">重点规则：${esc(D.baseline.priorityRuleDate||PriorityRules.version)}。集团负责人和中国区一把手同层，其他明确主体负责人随后。</p></div></section>`};
 const priorityExports=renderExports;
 renderExports=function(){return priorityExports()+`<section class="panel" style="margin-top:20px"><div class="panel-body"><h2>重点候选核对清单</h2><p>当前 ${yes().filter(g=>g.priorityCandidate).length} 人待核对，可查看识别依据、任职范围和原始来源。仅已入选者进入正式重点名单。</p><button class="btn primary" data-action="export-priority-candidates">导出重点候选Excel</button><button class="btn" data-action="export-priority-basis">导出重点筛选依据Excel</button></div></section>`};
 const priorityExportData=exportData;
@@ -23,7 +23,7 @@ exportData=function(a){
 const priorityGuestDrawer=guestDrawer;
 guestDrawer=function(id){
  priorityGuestDrawer(id);
- const g=G.find(x=>x.id===id),u=unit(g.unitId),assessment=PriorityRules.assess(g,u);
+ const g=G.find(x=>x.id===id),u=unit(g.unitId),assessment=PriorityRules.assess(g,u,D.ruleProfile?.settings);
  $('#guest-form')?.insertAdjacentHTML('afterbegin',`<label class="form-field">该条嘉宾对应企业简称<input name="short" value="${esc(g.short||'')}" placeholder="与该参会主体一致的简称"></label>`);
  if(!assessment.potential)return;
  const r=g.priorityReview||{},form=document.createElement('form');form.id='priority-review-form';
@@ -48,3 +48,6 @@ window.addEventListener('hashchange',()=>{if(location.hash==='#guests?priority=c
 const priorityReport=reportText;
 reportText=function(){return priorityReport()+`\n重点筛选补充：规则版本${D.baseline.priorityRuleDate||PriorityRules.version}；另有${yes().filter(g=>g.priorityCandidate).length}名重点候选待核对，未计入重点人数。总裁及副总裁以上仍按原关键词口径统计，不因本次重点范围扩展而改变。`};
 
+
+
+RuleWorkspace.install();

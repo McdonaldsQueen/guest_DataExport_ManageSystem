@@ -1,6 +1,6 @@
 {
   "name": "guest-dataexport-managesystem",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": true,
   "description": "招商大会嘉宾名单核对、统计与文件导出工作台",
   "engines": {
@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "node scripts/serve.mjs",
     "start": "node scripts/serve.mjs",
-    "test": "node tests/check.mjs && node tests/processing.mjs && node tests/priority.mjs",
+    "test": "node tests/check.mjs && node tests/processing.mjs && node tests/priority.mjs && node tests/rule-profiles.mjs",
     "build": "node scripts/validate.mjs"
   }
 }

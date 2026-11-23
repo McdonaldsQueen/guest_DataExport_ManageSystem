@@ -97,3 +97,11 @@ JSON备份format为investment-workspace-v2，包含data/baseGuests/edits/log/rev
 ## v0.3重点筛选
 
 senior保留原关键词口径。guest新增priorityCandidate、priorityDecision、priorityScope、priorityRoleReasons、priorityRuleVersion及priorityReview。priorityReview含decision、scope、current、note、title、unitSignature、time；职务或单位签名变化使核实失效。baseline新增priorityCandidates和priorityRuleDate。priorityRuleText同步至批次rules。原五字段重点名单不变，候选及依据另导出。
+
+
+
+## v0.4规则方案
+
+公开默认方案default-rulebook.json，schema=investment-rules-v1，含name/version/settings/documents及industryAliases、companyAliasesExtra、countryAliases、nationalityAliases、departmentTargets。RuleProfiles.validate拒绝未知执行字段、非法优先级及不合法映射；config把方案转为Processing配置。每个批次新增ruleProfile追溯信息。
+
+IndexedDB workspace的rule-profiles键保存另存方案数组，与active批次分离；不自动激活。初始化取官方默认，从rawRecords重算已保存的用户批次并按sources追溯核对修改；跨方案归并不能唯一对应时失效重点核实。应用当前会话方案后统一yes/provisional选择器、引擎和导出。

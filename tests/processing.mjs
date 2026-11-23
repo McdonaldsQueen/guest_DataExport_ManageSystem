@@ -8,8 +8,8 @@ const base=JSON.parse(fs.readFileSync('dist/data.json','utf8'));
 const config=JSON.parse(fs.readFileSync('dist/processing-rules.json','utf8'));
 const nodes=new Map();
 function node(k){if(!nodes.has(k))nodes.set(k,{innerHTML:'',textContent:'',style:{},addEventListener(){},querySelector(){return null}});return nodes.get(k)}
-const c={JSZip,sax,console,structuredClone,Blob,TextEncoder,TextDecoder,DataView,Uint8Array,ArrayBuffer,URL,setTimeout,clearTimeout,FormData,location:{hash:'#overview'},window:{addEventListener(){},scrollTo(){}},navigator:{},localStorage:{setItem(){},getItem(){return null}},document:{querySelector:node,addEventListener(){},body:{style:{}}},fetch:async url=>({ok:true,json:async()=>structuredClone(url==='processing-rules.json'?config:base)})};
-vm.createContext(c);for(const f of ['office.js','priority-rules.js','processing.js','xlsx-reader.js','app.js','integration.js','priority-ui.js'])vm.runInContext(fs.readFileSync('dist/'+f,'utf8'),c);
+const c={JSZip,sax,console,structuredClone,Blob,TextEncoder,TextDecoder,DataView,Uint8Array,ArrayBuffer,URL,setTimeout,clearTimeout,FormData,location:{hash:'#overview'},window:{addEventListener(){},scrollTo(){}},navigator:{},localStorage:{setItem(){},getItem(){return null}},document:{querySelector:node,addEventListener(){},body:{style:{}}},fetch:async url=>({ok:true,json:async()=>structuredClone(url==='default-rulebook.json'?JSON.parse(fs.readFileSync('dist/default-rulebook.json','utf8')):url==='processing-rules.json'?config:base)})};
+vm.createContext(c);for(const f of ['office.js','rule-profiles.js','rule-rebuild.js','priority-rules.js','processing.js','xlsx-reader.js','app.js','rule-workspace.js','integration.js','priority-ui.js'])vm.runInContext(fs.readFileSync('dist/'+f,'utf8'),c);
 await new Promise(r=>setTimeout(r,20));
 const engine=c.Processing.create(config),run=s=>vm.runInContext(s,c);
 function row(line,name,person,title,status='是',owner='南山区',nature='9.民营企业'){const values=Array(22).fill('');Object.assign(values,{0:String(line),1:name,2:'演示简称',3:'中国',4:'意向投资企业',5:nature,7:'金融',8:person,9:title,10:'中国',13:owner,16:status});return{line,sheet:'嘉宾表',values}}
@@ -54,5 +54,11 @@ assert.throws(()=>run('validateBackup(badBackup)'));
 for(const name of ['overview','units','guests','issues','departments','imports','exports','rules']){run(`location.hash='#${name}';render()`);assert.ok(node('#main').innerHTML.length>100)}
 fs.mkdirSync('qa',{recursive:true});const exported=run("Office.xlsx(['企业全称','企业简称','企业类型','嘉宾姓名','嘉宾职务'],guestRows(yes()),'重算后名单')");fs.writeFileSync('qa/processed.xlsx',new Uint8Array(await exported.blob.arrayBuffer()));
 await run('workspaceWrite');
+run("const profileTest=RuleWorkspace.getOfficial();profileTest.name='临时扩大确认';profileTest.version='test-expanded';profileTest.settings.pendingMode='confirmed';RuleWorkspace.previewRules(profileTest);RuleWorkspace.applyPreview()");
+assert.equal(run('yes().length'),4,'custom rule changes all confirmation selectors');
+assert.ok(run('reportText()').includes('确认参会嘉宾4人'),'report uses custom scope');
+c.customSaved=run("({format:'investment-workspace-v2',data:structuredClone(D),baseGuests:structuredClone(baseG),edits:structuredClone(edits),reviewed:structuredClone(reviewed),log:structuredClone(log)})");
+run('batchStorage=async()=>customSaved');await run('init()');assert.equal(run('yes().length'),3,'new session restores default scope instead of saved custom rules');assert.equal(run('D.ruleProfile.name'),'敲定默认版');assert.equal(run("G.find(g=>g.name==='测试戊').title"),'助理','manual data review survives default reset');
 run('batchStorage=async()=>testBackup');await run('init()');assert.equal(run('yes().length'),3,'real imported batch survives startup');c.demoSaved=structuredClone(backup);c.demoSaved.data.baseline.mode='demo';run('batchStorage=async()=>demoSaved');await run('init()');assert.equal(run('G.length'),0,'old saved demo is discarded');assert.equal(run('D.units.length'),0,'no example units after startup');
 console.log('PASS: compressed XLSX import; actual row numbers; duplicate title and owner rules; anonymous slots; status conflicts; nature priority; 2025/2026 union; aliases; apply updates UI/report/export; edits recalculate; backup validation; eight-page rendering.');
+
