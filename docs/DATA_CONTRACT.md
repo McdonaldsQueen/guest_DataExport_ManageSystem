@@ -92,3 +92,8 @@
 Processing.create(config).parseSheets(sheets,base,selectedIndices)识别22列并保留sheet/line/section；fromRecords(records,base,{fileName,date,aliases})输出units、guests、departments、districts、rules、baseline以及rawRecords、customAliases、processing。processing含rawRows、validRows、excluded、mergedRows、warnings和processedAt。guest新增sources、sourceEntities、sourceTitles、processingIssues、rankClaim和priorityTier/Reasons；unit新增canonicalKey、sourceEntities、worlds、private、rankIssues和processingIssues。screen(data)重算标签与baseline。
 
 JSON备份format为investment-workspace-v2，包含data/baseGuests/edits/log/reviewed。IndexedDB数据库sz-investment-local-batches-v2存workspace/active。备份仅供本应用恢复，不是Excel导入格式。独立原始数据必须在处理后显式应用；状态是/否冲突转待定。旧版接口约定中“导入仅预览”由此替代。
+
+
+## v0.3重点筛选
+
+senior保留原关键词口径。guest新增priorityCandidate、priorityDecision、priorityScope、priorityRoleReasons、priorityRuleVersion及priorityReview。priorityReview含decision、scope、current、note、title、unitSignature、time；职务或单位签名变化使核实失效。baseline新增priorityCandidates和priorityRuleDate。priorityRuleText同步至批次rules。原五字段重点名单不变，候选及依据另导出。

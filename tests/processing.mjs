@@ -9,7 +9,7 @@ const config=JSON.parse(fs.readFileSync('dist/processing-rules.json','utf8'));
 const nodes=new Map();
 function node(k){if(!nodes.has(k))nodes.set(k,{innerHTML:'',textContent:'',style:{},addEventListener(){},querySelector(){return null}});return nodes.get(k)}
 const c={JSZip,sax,console,structuredClone,Blob,TextEncoder,TextDecoder,DataView,Uint8Array,ArrayBuffer,URL,setTimeout,clearTimeout,FormData,location:{hash:'#overview'},window:{addEventListener(){},scrollTo(){}},navigator:{},localStorage:{setItem(){},getItem(){return null}},document:{querySelector:node,addEventListener(){},body:{style:{}}},fetch:async url=>({ok:true,json:async()=>structuredClone(url==='processing-rules.json'?config:base)})};
-vm.createContext(c);for(const f of ['office.js','processing.js','xlsx-reader.js','app.js','integration.js'])vm.runInContext(fs.readFileSync('dist/'+f,'utf8'),c);
+vm.createContext(c);for(const f of ['office.js','priority-rules.js','processing.js','xlsx-reader.js','app.js','integration.js','priority-ui.js'])vm.runInContext(fs.readFileSync('dist/'+f,'utf8'),c);
 await new Promise(r=>setTimeout(r,20));
 const engine=c.Processing.create(config),run=s=>vm.runInContext(s,c);
 function row(line,name,person,title,status='是',owner='南山区',nature='9.民营企业'){const values=Array(22).fill('');Object.assign(values,{0:String(line),1:name,2:'演示简称',3:'中国',4:'意向投资企业',5:nature,7:'金融',8:person,9:title,10:'中国',13:owner,16:status});return{line,sheet:'嘉宾表',values}}

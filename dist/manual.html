@@ -1,7 +1,7 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>使用说明 · 全球招商大会嘉宾工作台</title><style>html{scroll-behavior:smooth}body{margin:0;background:#f4f7f9;color:#243847;font:16px/1.85 system-ui,"Microsoft YaHei",sans-serif}header{background:#193c50;color:white;padding:20px 5%;display:flex;justify-content:space-between;align-items:center;gap:16px}header a{color:white}button,.return{border:1px solid #b9cbd4;border-radius:7px;padding:8px 16px;background:white;color:#193c50;cursor:pointer;text-decoration:none;font:inherit}main{max-width:1180px;margin:28px auto;display:grid;grid-template-columns:245px 1fr;gap:30px;padding:0 20px}nav{position:sticky;top:20px;align-self:start;background:white;border-radius:10px;padding:18px;max-height:85vh;overflow:auto}nav a{display:block;font-size:14px;padding:6px 0;text-decoration:none;color:#245c7c}article{background:white;padding:32px 42px;border-radius:10px;min-width:0}h1{font-size:28px;line-height:1.5;margin-top:0}h2{font-size:22px;border-bottom:1px solid #e2e9ed;padding-bottom:10px;margin-top:40px;scroll-margin-top:20px}h3{font-size:17px;margin-top:28px}p{margin:14px 0}li{margin:8px 0}a{color:#17648b;overflow-wrap:anywhere}footer{text-align:center;padding:20px;color:#607786} @media(max-width:800px){main{display:block}nav{position:static;max-height:none;margin-bottom:20px}article{padding:24px 20px}header{flex-wrap:wrap}} @media print{header,nav,footer{display:none}body{background:white;font-size:11pt}main{display:block;padding:0;margin:0}article{padding:0}h2,h3{break-after:avoid}li,p{orphans:3;widows:3}}</style></head><body><header><b>全球招商大会嘉宾工作台 · 使用说明</b><div><a class="return" href="./">返回工作台</a> <button onclick="window.print()">打印／保存为PDF</button></div></header><main><nav aria-label="使用说明目录"><b>阅读目录</b><a href="#section-1">一、先了解系统的工作方式</a><a href="#section-2">二、第一次使用：准备哪些文件</a><a href="#section-3">三、导入并形成一个实际批次</a><a href="#section-4">四、如何理解确认、暂计和人数</a><a href="#section-5">五、企业归并、重复嘉宾及性质分类</a><a href="#section-6">六、信息核对：修改嘉宾和单位</a><a href="#section-7">七、各个页面分别用来做什么</a><a href="#section-8">八、重点嘉宾、高管和国籍地区如何看</a><a href="#section-9">九、邀请进展与完成率</a><a href="#section-10">十、生成Excel和Word</a><a href="#section-11">十一、保存、恢复和交接工作</a><a href="#section-12">十二、常见问题</a><a href="#section-13">十三、建议的每日操作顺序</a><a href="#section-14">十四、系统能力边界</a></nav><article><h1>全球招商大会嘉宾工作台使用说明</h1>
 <p>适用对象：首次接手名单整理、数据核对、部门进展和汇报材料工作的人员。</p>
-<p>适用版本：v0.2.2；更新日期：2026年11月21日。</p>
-<p>系统地址：<a href="https://mcdonaldsqueen.github.io/guest_DataExport_ManageSystem/">https://mcdonaldsqueen.github.io/guest_DataExport_ManageSystem/</a></p>
+<p>适用版本：v0.3.0；更新日期：2026年11月23日。</p>
+<p>系统地址：https://mcdonaldsqueen.github.io/guest_DataExport_ManageSystem/</p>
 <h2 id="section-1">一、先了解系统的工作方式</h2>
 <p>本系统把原始Excel中的分散记录，整理为确认参会单位、确认参会嘉宾及相关统计，再导出名单、问题清单和Word核对稿。</p>
 <p>完整流程为：上传源表 → 选择工作表和截止时间 → 按规则处理 → 检查处理结果 → 应用到工作台 → 核对资料 → 导出文件与备份。</p>
@@ -74,8 +74,12 @@
 <li>统计规则：查看当前载入的规则文字。业务规则变更应先同步规则文件，再更新程序；本页不提供在线编辑规则。</li>
 </ul>
 <h2 id="section-8">八、重点嘉宾、高管和国籍地区如何看</h2>
-<p>重点嘉宾须为确认参会，企业全称、简称、类型／性质、嘉宾姓名及职务五项完整。筛选和排序先看经榜单核验企业的高职级嘉宾，再看未上榜但职级符合的企业嘉宾，最后看符合职级条件的机构嘉宾。集团高管和符合条件的中国区一把手可进入同一重点层级。</p>
-<p>不能仅凭“经理”或“负责人”三个字判断职级；任职范围、上榜关系或任职状态不明确的记录需要进一步核对。系统筛选不代替职务真实性确认。</p>
+<p>重点嘉宾须为确认参会，企业全称、简称、类型／性质、姓名、职务五项完整。排序仍为A榜单企业、B其他企业、C机构；集团负责人和中国区一把手同层，明确下属参会主体负责人随后。</p>
+<p>新版按实际职级和范围筛选：央国企总经理、党委负责人及相应副职，外企全球／集团主席和中国区整体经营负责人，专业服务或投资企业符合条件的管理、执行、首席、高级合伙人可以结合性质、主体及范围纳入。央国企识别保留全部性质标签，不只看主分类。</p>
+<p>纯创始人、联合创始人、裸合伙人或范围不清的主席先列“重点候选待核对”。创始人头衔不能证明企业是初创或本人目前仍经营；部门总经理、市场或政府事务负责人不能直接等同企业或中国区一把手。</p>
+<p>在“参会嘉宾”筛选“重点候选待核对”，查看依据和原因。打开嘉宾详情，下方“重点筛选核实”可选择自动、待核对、纳入或排除。纳入需填写业务依据，确认当前参与经营／决策，明确集团、中国区或本参会主体范围；五项完整、确认状态和榜单核验条件仍须满足。</p>
+<p>需要修订姓名、职务、该条企业简称时，先保存上方嘉宾资料，再核实。职务或单位主体／性质变化后，原重点核实失效。恢复嘉宾原始数据清除该人工重点核实。核实依据、范围、结论及日志保存在本机批次与JSON备份中。</p>
+<p>文件输出新增“重点候选Excel”和“重点筛选依据Excel”，附层级、范围、识别依据、待核对原因、人工依据、邀请来源和原始行号。候选不计正式重点人数；原高管口径不因重点范围扩展而增加。</p>
 <p>高管按董事长、总裁、副总裁、CEO等明确关键词识别，排除助理、秘书和办公室等表述。不是所有总经理都默认计作副总裁以上。人选待定但符合职务、参会为“是”的名额按规则保留。</p>
 <p>嘉宾中国香港、中国澳门、中国台湾身份单列，不计外籍；空白或待定列未知。企业国别不用于补嘉宾国籍。单位国别填中国也不能单独据此断定为内资企业。</p>
 <h2 id="section-9">九、邀请进展与完成率</h2>
@@ -135,4 +139,4 @@
 </ol>
 <h2 id="section-14">十四、系统能力边界</h2>
 <p>当前支持本机导入、规则处理、核对、统计、导出及备份恢复。尚不支持账号权限、多人实时协作、服务端正式批次审签、自动合并多人草稿和完整历史批次库。</p>
-<p>系统自动处理已明确的字典和规则，不能替业务方确认参会意愿、任职真实性或存在歧义的企业关系。正式报送前，应由经办人员完成业务核实和文件复核。</p></article></main><footer>v0.2.2 · 2026年11月21日更新 · 可通过右上角使用说明随时打开</footer></body></html>
+<p>系统自动处理已明确的字典和规则，不能替业务方确认参会意愿、任职真实性或存在歧义的企业关系。正式报送前，应由经办人员完成业务核实和文件复核。</p></article></main><footer>v0.3.0 · 2026年11月23日更新 · 可通过右上角使用说明随时打开</footer></body></html>
